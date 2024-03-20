@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "894875794357",
+    "project_id": "allone-hml",
+    "storage_bucket": "allone-hml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894875794357:android:2ffae99b94be9e6cbcf7fc",
+        "android_client_info": {
+          "package_name": "br.com.allone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA50qbz2HTIOfbxYWaIZ8kABm3GcOB2Qc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
