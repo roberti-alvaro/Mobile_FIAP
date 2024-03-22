@@ -13,9 +13,9 @@
         android:theme="@style/Theme.AllOne"
         tools:targetApi="31">
         <activity
-            android:name=".Login"
+            android:name=".StartPage"
             android:exported="true"
-            android:label="@string/title_activity_login"
+            android:label="@string/title_activity_start_page"
             android:theme="@style/Theme.AllOne" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +24,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Login"
+            android:exported="true"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.AllOne" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AllOne">
-        </activity>
+            android:theme="@style/Theme.AllOne" />
     </application>
 
 </manifest>
