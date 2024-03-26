@@ -15,6 +15,10 @@ val Roboto = FontFamily(
         Font(R.font.roboto_bold)
 )
 
+val Coda = FontFamily(
+        Font(R.font.coda_regular)
+)
+
 // Set of Material typography styles to start with
 val Typography = Typography(
         bodyLarge = TextStyle(

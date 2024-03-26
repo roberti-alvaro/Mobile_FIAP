@@ -2,22 +2,23 @@ package br.com.allone
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Paint.Align
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -34,10 +35,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.allone.ui.theme.AllOneTheme
+import br.com.allone.ui.theme.Coda
 import br.com.allone.ui.theme.Roboto
 import kotlinx.coroutines.launch
 
@@ -72,8 +75,26 @@ fun LoginScreen() {
     var password by remember { mutableStateOf("") }
 
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        IconButton(
+            onClick = { },
+            modifier = Modifier.align(Alignment.Start)
+        ) {
+            Icon(
+                imageVector = Icons.Filled.KeyboardArrowLeft,
+                contentDescription = "Back",
+                tint = Color(0xFF6545A8),
+                modifier = Modifier.size(50.dp)
+
+            )
+        }
         Row {
-            Text(text = "LOGIN")
+            Text(
+                text = "Log in",
+                fontSize = 70.sp,
+                fontFamily = Coda,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF6545A8)
+            )
         }
         TextField(
             value = email,
@@ -104,6 +125,9 @@ fun LoginScreen() {
                 }
             },
             shape = RectangleShape,
+            elevation = ButtonDefaults.buttonElevation(
+                defaultElevation = 100.dp
+            ),
             colors = ButtonDefaults.outlinedButtonColors(Color(0xFF6545A8)),
             modifier = Modifier
                 .width(320.dp)
@@ -119,7 +143,6 @@ fun LoginScreen() {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
