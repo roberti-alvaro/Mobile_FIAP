@@ -6,13 +6,19 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material3.Button
@@ -20,9 +26,13 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldColors
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,6 +46,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -65,6 +76,10 @@ fun navigateToHomeScreen(context: Context) {
     val intent = Intent(context, MainActivity::class.java)
     context.startActivity(intent)
 }
+fun navigateToStartPage(context: Context) {
+    val intent = Intent(context, StartPage::class.java)
+    context.startActivity(intent)
+}
 
 @Composable
 fun LoginScreen() {
@@ -76,7 +91,7 @@ fun LoginScreen() {
 
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         IconButton(
-            onClick = { },
+            onClick = { navigateToStartPage(context) },
             modifier = Modifier.align(Alignment.Start)
         ) {
             Icon(
@@ -96,17 +111,24 @@ fun LoginScreen() {
                 color = Color(0xFF6545A8)
             )
         }
-        TextField(
+        OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text("Email") }
+            label = { Text("Email") },
+            modifier = Modifier
+                .fillMaxWidth(0.90f)
+
         )
 
-        TextField(
+        OutlinedTextField (
             value = password,
             onValueChange = { password = it },
-            label = { Text("Password") }
+            label = { Text("Password") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+            modifier = Modifier
+                .fillMaxWidth(0.90f)
         )
+        Spacer(modifier = Modifier.height(9.dp))
         Button(
             onClick = {
                 // Handle login here
@@ -130,7 +152,7 @@ fun LoginScreen() {
             ),
             colors = ButtonDefaults.outlinedButtonColors(Color(0xFF6545A8)),
             modifier = Modifier
-                .width(320.dp)
+                .fillMaxWidth(0.90f)
                 .height(50.dp)
                 .clip(RoundedCornerShape(7.dp))
         ) {
