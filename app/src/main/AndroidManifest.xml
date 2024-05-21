@@ -6,16 +6,14 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AllOne"
         tools:targetApi="31">
         <activity
-            android:name=".StartPage"
+            android:name=".Main"
             android:exported="true"
-            android:label="@string/title_activity_start_page"
+            android:label="MainPage"
             android:theme="@style/Theme.AllOne" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,12 +24,27 @@
         <activity
             android:name=".Login"
             android:exported="true"
-            android:label="@string/title_activity_login"
+            android:label="Login"
             android:theme="@style/Theme.AllOne" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="MainActivity"
+            android:theme="@style/Theme.AllOne" />
+        <activity
+            android:name=".Profile"
+            android:exported="true"
+            android:label="Profile"
+            android:theme="@style/Theme.AllOne" />
+        <activity
+            android:name=".StartPage"
+            android:exported="true"
+            android:label="@string/title_activity_start_page"
+            android:theme="@style/Theme.AllOne" />
+        <activity
+            android:name=".Search"
+            android:exported="true"
+            android:label="SearchPage"
             android:theme="@style/Theme.AllOne" />
     </application>
 

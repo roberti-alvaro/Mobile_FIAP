@@ -1,4 +1,4 @@
-package br.com.eschola
+package br.com.allone
 
 import android.content.Context
 import android.content.Intent
@@ -42,9 +42,9 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.eschola.ui.theme.AllOneTheme
-import br.com.eschola.ui.theme.Coda
-import br.com.eschola.ui.theme.Roboto
+import br.com.allone.ui.theme.AllOneTheme
+import br.com.allone.ui.theme.Coda
+import br.com.allone.ui.theme.Roboto
 import kotlinx.coroutines.launch
 
 class Login : ComponentActivity() {
@@ -64,8 +64,8 @@ class Login : ComponentActivity() {
     }
 }
 
-fun navigateToHomeScreen(context: Context) {
-    val intent = Intent(context, MainActivity::class.java)
+fun navigateToProfile(context: Context) {
+    val intent = Intent(context, Profile::class.java)
     context.startActivity(intent)
 }
 fun navigateToStartPage(context: Context) {
@@ -130,7 +130,7 @@ fun LoginScreen() {
                     val result = FirebaseService.signInWithEmail(context, email, password)
 
                     if (result.isSuccess) {
-                        navigateToHomeScreen(context)
+                        navigateToProfile(context)
                     } else {
                         result.exceptionOrNull()?.let { exception ->
                             Toast.makeText(context, exception.message, Toast.LENGTH_SHORT).show()

@@ -1,4 +1,4 @@
-package br.com.eschola.ui.theme
+package br.com.allone.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

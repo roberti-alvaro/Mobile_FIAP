@@ -19,6 +19,18 @@ val Coda = FontFamily(
         Font(R.font.coda_regular)
 )
 
+val PoppinsBold = FontFamily(
+        Font(R.font.poppins_bold)
+)
+
+val Poppins = FontFamily(
+        Font(R.font.poppins_regular)
+)
+
+val PoppinsBlack = FontFamily(
+        Font(R.font.poppins_black)
+)
+
 // Set of Material typography styles to start with
 val Typography = Typography(
         bodyLarge = TextStyle(
