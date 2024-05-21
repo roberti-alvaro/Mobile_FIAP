@@ -47,7 +47,7 @@ import br.com.eschola.ui.theme.Coda
 import br.com.eschola.ui.theme.Roboto
 import kotlinx.coroutines.launch
 
-class Login : ComponentActivity() {
+class Profile : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -57,24 +57,20 @@ class Login : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LoginScreen()
+                    ProfileScreen()
                 }
             }
         }
     }
 }
 
-fun navigateToHomeScreen(context: Context) {
+fun navigateToMainActivity(context: Context) {
     val intent = Intent(context, MainActivity::class.java)
-    context.startActivity(intent)
-}
-fun navigateToStartPage(context: Context) {
-    val intent = Intent(context, StartPage::class.java)
     context.startActivity(intent)
 }
 
 @Composable
-fun LoginScreen() {
+fun ProfileScreen() {
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
 
@@ -160,7 +156,7 @@ fun LoginScreen() {
 
 @Preview(showBackground = true)
 @Composable
-fun LoginPreview() {
+fun ProfileScreenPreview() {
     AllOneTheme {
         LoginScreen()
     }

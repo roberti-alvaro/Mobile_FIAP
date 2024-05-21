@@ -1,4 +1,4 @@
-package br.com.allone
+package br.com.eschola
 
 import org.junit.Test
 

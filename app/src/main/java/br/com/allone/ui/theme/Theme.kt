@@ -1,4 +1,4 @@
-package br.com.allone.ui.theme
+package br.com.eschola.ui.theme
 
 import android.app.Activity
 import android.os.Build

@@ -1,4 +1,4 @@
-package br.com.allone
+package br.com.eschola
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
