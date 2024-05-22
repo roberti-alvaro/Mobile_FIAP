@@ -7,7 +7,7 @@ Após logado a tela inicial aparecerá um professor de exemplo, ao clicar curtir
 Ao clicar na lupa na barra inferior, terá acesso a página de busca avançada.
 
 Para visualizar a notificação push:
-- Enviar seu e-mail google para o e-mail roberti.alvaro@gmail.com para liberar envio da notificação push. OBS: Sem a liberação do seu e-mail para crir a notificação dará erro de acesso ao criar a notificação push.
+- Enviar seu e-mail google para o e-mail roberti.alvaro@gmail.com para liberar envio da notificação push. OBS: Sem a liberação do seu e-mail para criar a notificação dará erro de acesso ao criar a notificação push.
 - Clicar no botão curtir do professor da tela principal.
 - No logcat do android studio, pegar o token gerado após a curtida no campo "FCM Token" exemplo: eHxcq4_CT4mDa_ZWriDxLb:APA91bFDO6XwSO9XQx38Vyxr5TQh5PYewwyUrtd2mxPN28CeIEFpsEwJsaGQnqN9HZGhkNQfQJ5J34Bh2eggjmgClTcxyGrEv7GY5KvtUdIllyTeoUHUvfyY5Rar2tP97RPVnU4HTQrU
 - Abrir o Postman(Desktop), e importar o seguinte curl:
