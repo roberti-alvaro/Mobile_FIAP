@@ -45,7 +45,13 @@ import androidx.compose.ui.unit.sp
 import br.com.allone.ui.theme.AllOneTheme
 import br.com.allone.ui.theme.Coda
 import br.com.allone.ui.theme.Roboto
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.firestore
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 class Login : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,6 +77,30 @@ fun navigateToStartPage(context: Context) {
 fun navigateToMain(context: Context) {
     val intent = Intent(context, Main::class.java)
     context.startActivity(intent)
+}
+
+object FirebaseService {
+
+    suspend fun signInWithEmail(context: Context, email: String, password: String): Result<String> = withContext(
+        Dispatchers.IO) {
+        val auth = FirebaseAuth.getInstance()
+        return@withContext try {
+
+            val sharedPref = context.getSharedPreferences("personalData", Context.MODE_PRIVATE)
+            val result = auth.signInWithEmailAndPassword(email, password).await()
+            val user = result.user
+
+            with(sharedPref.edit()) {
+                putString("uid", user?.uid!!)
+                apply()
+            }
+
+            Result.success(user?.uid!!)
+
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
 }
 
 @Composable

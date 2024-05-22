@@ -34,11 +34,6 @@
             android:label="Login"
             android:theme="@style/Theme.AllOne" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="MainActivity"
-            android:theme="@style/Theme.AllOne" />
-        <activity
             android:name=".Profile"
             android:exported="true"
             android:label="Profile"
