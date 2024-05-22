@@ -62,6 +62,16 @@ fun navigateLogin(context: Context) {
     context.startActivity(intent)
 }
 
+fun navigateProfile(context: Context) {
+    val intent = Intent(context, Profile::class.java)
+    context.startActivity(intent)
+}
+
+fun navigateStartPage(context: Context) {
+    val intent = Intent(context, StartPage::class.java)
+    context.startActivity(intent)
+}
+
 @Composable
 fun Page() {
     val context = LocalContext.current
@@ -116,7 +126,7 @@ fun Page() {
             )
         }
         ElevatedButton(
-            onClick = { /*TODO*/ },
+            onClick = { navigateProfile(context) },
             shape = RectangleShape,
             colors = ButtonDefaults.elevatedButtonColors(Color(0xFF282D7F)),
             modifier = Modifier

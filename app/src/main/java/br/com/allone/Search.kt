@@ -3,7 +3,6 @@ package br.com.allone
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -47,13 +46,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.allone.ui.theme.AllOneTheme
 import br.com.allone.ui.theme.Roboto
-import kotlinx.coroutines.launch
 
 class Search : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,12 +72,14 @@ class Search : ComponentActivity() {
 }
 
 fun navigateToMainPage(context: Context) {
-    val intent = Intent(context, MainActivity::class.java)
+    val intent = Intent(context, Main::class.java)
     context.startActivity(intent)
 }
 
 @Composable
 fun SearchScreen() {
+    val context = LocalContext.current
+
     var data by remember { mutableStateOf("") }
     var area by remember { mutableStateOf("") }
     var habilidade by remember { mutableStateOf("") }
@@ -118,7 +119,7 @@ fun SearchScreen() {
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     IconButton(
-                        onClick = { /*TODO*/ },
+                        onClick = { navigateToMainPage(context) },
                         modifier = Modifier.padding(start = 15.dp, end = 25.dp)
                     ) {
                         Icon(

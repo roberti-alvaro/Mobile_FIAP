@@ -64,12 +64,12 @@ class Login : ComponentActivity() {
     }
 }
 
-fun navigateToProfile(context: Context) {
-    val intent = Intent(context, Profile::class.java)
-    context.startActivity(intent)
-}
 fun navigateToStartPage(context: Context) {
     val intent = Intent(context, StartPage::class.java)
+    context.startActivity(intent)
+}
+fun navigateToMain(context: Context) {
+    val intent = Intent(context, Main::class.java)
     context.startActivity(intent)
 }
 
@@ -130,7 +130,7 @@ fun LoginScreen() {
                     val result = FirebaseService.signInWithEmail(context, email, password)
 
                     if (result.isSuccess) {
-                        navigateToProfile(context)
+                        navigateToMain(context)
                     } else {
                         result.exceptionOrNull()?.let { exception ->
                             Toast.makeText(context, exception.message, Toast.LENGTH_SHORT).show()

@@ -1,7 +1,5 @@
 package br.com.allone
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -43,6 +41,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -74,6 +73,8 @@ class Profile : ComponentActivity() {
 
 @Composable
 fun ProfileScreen() {
+    val context = LocalContext.current
+
     var nome by remember { mutableStateOf("") }
     var sobre by remember { mutableStateOf("") }
     var area by remember { mutableStateOf("") }
@@ -106,7 +107,7 @@ fun ProfileScreen() {
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     IconButton(
-                        onClick = { /*TODO*/ },
+                        onClick = { navigateStartPage(context) },
                         modifier = Modifier.padding(start = 15.dp, end = 25.dp)
                     ) {
                         Icon(
@@ -122,7 +123,7 @@ fun ProfileScreen() {
                         fontSize = 17.sp
                     )
                     TextButton(
-                        onClick = { /*TODO*/ },
+                        onClick = { navigateStartPage(context) },
                         modifier = Modifier.padding(end = 15.dp)
                     ) {
                         Text(
