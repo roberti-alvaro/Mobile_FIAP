@@ -48,6 +48,8 @@ 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
 Scope:
 https://www.googleapis.com/auth/firebase.messaging
 
-Após essa configuração clicar no botão laranja em baixo "Get New Access Token". Uma janela para login no seu gmail abrirá, faça login, utilize o token gerado e clique em "Send" para enviar sua requisição HTTP no Postman.
+Após essa configuração clicar no botão laranja em baixo "Get New Access Token". Uma janela para login no seu gmail abrirá, faça login, utilize o token gerado.
+
+Agora na aba Body da requisição, coloque o token gerado no Logcat do android studio onde esta escrito "COLAR TOKEN LOGCAT AQUI" e clique em "Send" para enviar sua requisição HTTP no Postman.
 
 Pronto! Uma notificação push de "match" entre o aluno e professor aparecerá no seu emulador android!! Lembrando que esta notificação está sendo enviada para o sistema operacional do dispositivo utilizando segurança OAuth 2.0, como uma notificação real e não um simples mock! 
